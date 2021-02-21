@@ -9,7 +9,18 @@ Todo list app for code interview test. Based on react-redux + asp.net core web a
 ### Getting Started
 
 Check out the app on azure https://bx-todo-list.azurewebsites.net/
+
 Download sources from github https://github.com/sokoliao/todo-list
+
+Run at root to serve app's dev build locally on http://localhost:5000
+```
+dotnet run --project src/Server/BxTestTask.csproj
+```
+
+Run at root to trigger tests
+```
+dotnet test
+```
 
 ### Requirements
 
