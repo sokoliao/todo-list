@@ -15,8 +15,7 @@ export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }
                 <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" light>
                     <Container>
                         <NavbarBrand tag={Link} to="/">
-                          <Icons.ListCheck/>{' '}
-                          <span>TODO List</span>
+                          <Icons.ListCheck/>
                         </NavbarBrand>
                         <NavbarToggler onClick={this.toggle} className="mr-2"/>
                     </Container>

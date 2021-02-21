@@ -252,12 +252,25 @@ export const actionCreators = {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }
-      }).then(
-        _ => dispatch({
-          type: 'TASK_DELETED',
-          id: task.id
-        })
-      );
+      }).then(response => {
+        if (!response.ok) {
+          (response.json() as Promise<{message: string}>)
+            .then(error => {
+              dispatch({ type: 'SHOW_ERROR', message: `${response.status} ${error.message}` })
+            })
+            .catch(_ => {
+              dispatch({ type: 'SHOW_ERROR', message: `${response.status} ${response.body}` })
+            })
+            .finally(() => {
+              dispatch({ type: 'CANCEL_TASK_DELETE' })
+            });
+        } else {
+          dispatch({
+            type: 'TASK_DELETED',
+            id: task.id
+          })
+        }
+      });
     }
   },
   toggleOrderBy: (): AppThunkAction<KnownAction> => (dispatch, getState) => {
