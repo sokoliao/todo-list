@@ -14,7 +14,10 @@ Download sources from github https://github.com/sokoliao/todo-list
 
 Run at root to serve app's dev build locally on http://localhost:5000
 ```
-dotnet run --project src/Server/BxTestTask.csproj
+cd src/Server/ClientApp
+npm install
+cd ..
+dotnet run
 ```
 
 Run at root to trigger tests
