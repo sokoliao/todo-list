@@ -210,7 +210,7 @@ namespace ServerTests.integration
       Assert.Equal(400, (int)response.StatusCode);
     }
 
-    public static void AssertEqualToEntity(TodoTaskModel model, TodoTaskEntity entity)
+    private static void AssertEqualToEntity(TodoTaskModel model, TodoTaskEntity entity)
     {
       Assert.NotNull(model);
       Assert.NotNull(entity);
