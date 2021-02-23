@@ -50,10 +50,10 @@ namespace Service.Controllers
             return await createTodoTaskHandler.HandleAsync(command);
         }
 
-        [HttpDelete("delete")]
-        public async Task Delete([FromBody] TodoTaskDto task)
+        [HttpDelete("delete/{id}")]
+        public async Task Delete(string id)
         {
-            await deleteHandler.HandleAsync(task.ToModel());
+            await deleteHandler.HandleAsync(id);
         }
 
         [HttpPut("update")]

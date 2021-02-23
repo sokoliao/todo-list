@@ -19,7 +19,8 @@ namespace DataAccess.Inmemory.Extenstions
         public static IServiceCollection AddInmemoryStore(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<TodoTaskStoreOption>(o => configuration.GetSection(SECTION).Bind(o));
-
+            services.AddSingleton<IConstraint, UniqueIdConstraint>();
+            services.AddSingleton<IConstraint, UniqueNameConstraint>();
             services.AddSingleton<ITodoTaskStore>(services =>
               new ConcurrentStoreDecorator(
                 new ConstrantedStoreDecorator(

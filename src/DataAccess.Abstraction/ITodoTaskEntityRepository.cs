@@ -8,6 +8,7 @@ namespace DataAccess.Abstraction
     {
         Task<string> CreateAsync(TodoTaskEntity entity);
         Task<IEnumerable<TodoTaskEntity>> GetAll();
+        Task<TodoTaskEntity> GetById(string id);
         Task UpdateAsync(TodoTaskEntity entity);
         Task DeleteAsync(TodoTaskEntity entity);
 

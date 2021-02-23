@@ -5,6 +5,6 @@ namespace BussinessLogic.Abstraction.Handlers
 {
     public interface IDeleteCommandHandler
     {
-        Task HandleAsync(TodoTask task);
+        Task HandleAsync(string id);
     }
 }

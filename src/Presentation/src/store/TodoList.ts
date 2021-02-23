@@ -129,12 +129,12 @@ export const actionCreators = {
                 dispatch({ type: 'CANCEL_NEW_TASK_CREATION' });
               });
           } else {
-            (response.json() as Promise<{id: string}>)
+            (response.json() as Promise<string>)
               .then(response => {
                 dispatch({ 
                   type: 'NEW_TASK_CREATED',
                   newTask: {
-                    id: response.id,
+                    id: response,
                     name: task.name,
                     priority: task.priority,
                     status: task.status
@@ -194,7 +194,7 @@ export const actionCreators = {
     const appState = getState();
     if (appState && appState.todoList && appState.todoList.newTask) {
       const task = appState.todoList.taskInEdit;
-      fetch(`tasks/update/${task.id}`, {
+      fetch(`tasks/update`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',

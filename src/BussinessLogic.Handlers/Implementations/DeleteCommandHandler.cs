@@ -19,10 +19,11 @@ namespace BussinessLogic.Handlers.Implementation
             this.validator = validator;
         }
 
-        public async Task HandleAsync(TodoTask task)
+        public async Task HandleAsync(string id)
         {
+            var task = await repository.GetById(id);
             await validator.ValidateAndThrow(task);
-            await repository.DeleteAsync(task.ToEntity());
+            await repository.DeleteAsync(task);
         }
     }
 }

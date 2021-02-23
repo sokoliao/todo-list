@@ -38,6 +38,11 @@ namespace DataAccess.Inmemory.Repository
             return await store.Get();
         }
 
+        public async Task<TodoTaskEntity> GetById(string id)
+        {
+            return (await store.Get()).SingleOrDefault(task => task.Id == id);
+        }
+
         public async Task UpdateAsync(TodoTaskEntity entity)
         {
             await store.Set(tasks => tasks

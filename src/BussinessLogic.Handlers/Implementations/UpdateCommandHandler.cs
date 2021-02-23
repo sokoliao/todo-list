@@ -21,6 +21,7 @@ namespace BussinessLogic.Handlers.Implementation
 
         public async Task HandleAsync(TodoTask task)
         {
+            var prev = await repository.GetById(task.Id);
             await valdiator.ValidateAndThrow(task);
             await repository.UpdateAsync(task.ToEntity());
         }

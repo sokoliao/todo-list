@@ -1,7 +1,7 @@
 ﻿using DataAccess.Abstraction;
+using Shared.Exceptions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +25,7 @@ namespace DataAccess.Inmemory.Constraints
 
             if (duplicate != null)
             {
-                throw new ValidationException(
+                throw new TodoListValidationException(
                     $"Violation of unique {nameof(TodoTaskEntity.Id)} - {duplicate.id}");
             }
         }
