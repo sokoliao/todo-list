@@ -15,10 +15,10 @@ Solution is splitted into several layers to better match n-tier approach.
 Layer | Project/folder @  | Description
 --- | --- | ---
 Cross-cutting | Shared | Exception model
-DataAccess | DataAccess.Abstraction | Entities and interface for repository
-DataAccess | DataAccess.Inmemory | Inmemory implementation of repository
-BussinessLogic | BussinessLogic.Abstraction | Model and interfaces for action ahndlers
-BussinessLogic | BussinessLogic.Handlers | Implementation of abstraction. Validators are contained here as implementation detail
+DataAccess | DataAccess.Abstraction | Entities and interface for the repository
+DataAccess | DataAccess.Inmemory | Inmemory implementation of the repository
+BussinessLogic | BussinessLogic.Abstraction | Model and interfaces for action handlers
+BussinessLogic | BussinessLogic.Handlers | Implementation of bussiness logic abstractions. Validators are contained here as an implementation detail
 Service | Service.Abstraction | Model used by asp.net  service controller
-Service | Service | asp.net core web-api which serves as a service layer implementation. Its have slightly mixed responsibilities because it also services presentation layer. Due to dependency injection implementation have access to other layers
-Presentation | React app
+Service | Service | asp.net core web-api
+Presentation | react spa app
