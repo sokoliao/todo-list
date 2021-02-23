@@ -21,4 +21,4 @@ BussinessLogic | BussinessLogic.Abstraction | Model and interfaces for action ha
 BussinessLogic | BussinessLogic.Handlers | Implementation of bussiness logic abstractions. Validators are contained here as an implementation detail
 Service | Service.Abstraction | Model used by asp.net  service controller
 Service | Service | asp.net core web-api
-Presentation | react spa app
+Presentation | Presentation | react spa app
