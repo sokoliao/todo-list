@@ -14,7 +14,7 @@ Solution is splitted into several layers to better match n-tier approach.
 
 Layer | Project/folder @  | Description
 --- | --- | ---
- | Shared | Cross-cutting conserns, in this caxse exceptions
+Cross-cutting | Shared | Exception model
 DataAccess | DataAccess.Abstraction | Entities and interface for repository
 DataAccess | DataAccess.Inmemory | Inmemory implementation of repository
 BussinessLogic | BussinessLogic.Abstraction | Model and interfaces for action ahndlers
